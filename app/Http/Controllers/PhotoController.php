@@ -37,6 +37,21 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'file' => 'required|file|image|mimetypes:image/jpeg,image/png',
+        ]);
+        //画像ファイルの保存
+        $file = $request->file('file');
+        $ext = $file->getClientOriginalExtension();
+        $filename = time() . "." . $ext;
+        $file->storeAs('public/images', $filename);
+        // 投稿内容をDBに保存
+        \Auth::user()->photos()->create([
+            'filename' => $filename,
+        ]);
+
+        return back();
+
         $photo = Photo::create($request->all());
         $photo->tags()->attach(request()->tags);
         return redirect()->route('photos.index')->with('success', '新規登録完了しました');

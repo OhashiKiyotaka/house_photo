@@ -3,7 +3,7 @@
 
     <form action="{{ route('photos.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <p>ファイル<input type="file" name="filename" value="{{ old('filename') }}"></p>
+        <p>ファイル<input type="file" name="file" value="{{ old('filename') }}"></p>
         <p>
             @foreach($tags as $tag)
             <label>

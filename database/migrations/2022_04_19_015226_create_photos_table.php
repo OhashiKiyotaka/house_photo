@@ -18,7 +18,7 @@
 
                 $table->id();
                 $table->bigInteger('user_id')->unsigned();
-                $table->string('title');
+                $table->string('filename');
                 $table->timestamps();
                 //$table->foreign("id")->references("photo_id")->on("photo_tag");
 
