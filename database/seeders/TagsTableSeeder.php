@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Tag;
+
 
 class TagsTableSeeder extends Seeder
 {
@@ -13,19 +15,19 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        Tags::create([
+        Tag::create([
             'name' => 'シンプル',
         ]);
-        Tags::create([
+        Tag::create([
             'name' => 'モダン',
         ]);
-        Tags::create([
+        Tag::create([
             'name' => '古民家風',
         ]);
-        Tags::create([
+        Tag::create([
             'name' => 'リノベーション',
         ]);
-        Tags::create([
+        Tag::create([
             'name' => 'こだわり',
         ]);
     }

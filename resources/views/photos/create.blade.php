@@ -1,9 +1,9 @@
 <x-app-layout>
     <h1>写真投稿画面</h1>
 
-    <form action="{{ route('photos.store')}}" method="POST">
+    <form action="{{ route('photos.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <p>ファイル名<input type="text" name="filename" value="{{ old('filename') }}"></p>
+        <p>ファイル<input type="file" name="filename" value="{{ old('filename') }}"></p>
         <p>
             @foreach($tags as $tag)
             <label>
