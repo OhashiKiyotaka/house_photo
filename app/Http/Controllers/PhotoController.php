@@ -46,12 +46,11 @@ class PhotoController extends Controller
         $filename = time() . "." . $ext;
         $file->storeAs('public/images', $filename);
         // 投稿内容をDBに保存
-        \Auth::user()->photos()->create([
+        $photo = \Auth::user()->photos()->create([
             'filename' => $filename,
         ]);
 
 
-        $photo = Photo::create($request->all());
         $photo->tags()->attach(request()->tags);
         return redirect()->route('photos.index')->with('success', '新規登録完了しました');
     }

@@ -8,14 +8,14 @@
 
     <table border="1">
         <tr>
-            <th>title</th>
+            <th>filename</th>
             <th>tag</th>
             <th>編集</th>
             <th>削除</th>
         </tr>
         @foreach ($photos as $photo)
         <tr>
-            <td>{{ $photo->title }}</td>
+            <td><img src="{{ url('storage/images',$photo->filename) }}" alt=""></td>
             <td>
                 @foreach ($photo->tags as $tag)
                 <a href="{{ route('tag.show',$tag->id)}}">{{ $tag->name }}</a>
