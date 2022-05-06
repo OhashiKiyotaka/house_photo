@@ -21,9 +21,9 @@
                 <a href="{{ route('tag.show',$tag->id)}}">{{ $tag->name }}</a>
                 @endforeach
             </td>
-            <td><a href="{{ route('photo.edit',$photo->id)}}">編集</a></td>
+            <td><a href="{{ route('photos.edit',$photo->id)}}">編集</a></td>
             <td>
-                <form action="{{ route('photo.destroy', $photo->id)}}" method="POST">
+                <form action="{{ route('photos.destroy', $photo->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
                     <input type="submit" name="" value="削除">

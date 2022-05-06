@@ -50,7 +50,6 @@ class PhotoController extends Controller
             'filename' => $filename,
         ]);
 
-        return back();
 
         $photo = Photo::create($request->all());
         $photo->tags()->attach(request()->tags);
