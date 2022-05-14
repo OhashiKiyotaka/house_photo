@@ -15,8 +15,6 @@ class PhotoController extends Controller
      */
     public function index(Request $request)
     {
-        // $tag = Tag::find($id);
-        // return view('tag.show', compact('tag'));
         $photos = Photo::all();
         return view('photos.index', compact('photos'));
     }

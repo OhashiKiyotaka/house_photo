@@ -47,7 +47,8 @@ class TagController extends Controller
     public function show($id)
     {
         $tag = Tag::find($id);
-        return view('tag.show', compact('tag'));
+        $photos = $tag->photos()->get();
+        return view('photos.index', compact('photos'));
     }
 
     /**

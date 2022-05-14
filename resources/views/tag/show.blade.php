@@ -1,4 +1,4 @@
-<x-app-layout>
+<!-- <x-app-layout>
     <h1>{{ $tag->name }}タグPhoto一覧</h1>
 
     <ul>
@@ -6,4 +6,4 @@
         <li><img src="{{ url('storage/images',$photo->filename) }}" alt=""></li>
         @endforeach
     </ul>
-</x-app-layout>
+</x-app-layout> -->
